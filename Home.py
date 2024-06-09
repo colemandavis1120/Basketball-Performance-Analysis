@@ -32,6 +32,7 @@ sheet_name1 = 'alladvanceddata'
 sheet_name2 = 'homedefinitions'
 sheet_name3 = 'speedofplay'
 sheet_name4 = 'allstats'
+sheet_name5 = 'wincorrelation'
 
 df1 = pd.read_excel(excel_file1,
                    sheet_name=sheet_name2,
@@ -39,7 +40,7 @@ df1 = pd.read_excel(excel_file1,
                    header=1)
 df2 = pd.read_excel(excel_file1,
                     sheet_name=sheet_name1,
-                    usecols='A:S',
+                    usecols='A:T',
                     header=1)
 df3 = pd.read_excel(excel_file1,
                     sheet_name=sheet_name3,
@@ -49,15 +50,19 @@ df4 = pd.read_excel(excel_file1,
                     sheet_name=sheet_name4,
                     usecols='A:AA',
                     header=1)
-
-
+df5 = pd.read_excel(excel_file1, 
+                    sheet_name=sheet_name5,
+                    usecols='A:J',
+                    header=1)
 
 with col1:
     st.subheader("How to understand and use advanced stats")
     st.dataframe(df1, hide_index=True)
 with col2:
     st.subheader("Pace of Play")
-    st.dataframe(df3, hide_index=True)
+    st.dataframe(df3, hide_index=True, height=140)
+    st.subheader("Four Factor Rating")
+    st.dataframe(df5, hide_index=True)
     
 
 st.subheader("Advanced Stats Database")
@@ -65,8 +70,3 @@ st.dataframe(df2, hide_index=True)
 
 st.subheader("Box Score Database")
 st.dataframe(df4, hide_index=True)
-
-
-
-
-

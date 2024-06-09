@@ -28,7 +28,7 @@ sheet_name = 'alladvanceddata'
 
 df = pd.read_excel(excel_file,
                    sheet_name=sheet_name,
-                   usecols='A:S',
+                   usecols='A:T',
                    header=1)
 
 col1, col2 = st.columns([3, 2])

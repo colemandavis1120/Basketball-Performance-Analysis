@@ -32,7 +32,7 @@ sheet_name1 = 'alladvanceddata'
 
 df = pd.read_excel(excel_file1,
                     sheet_name=sheet_name1,
-                    usecols='B:S',
+                    usecols='B:T',
                     header=1)
 
 with col2: 
@@ -48,3 +48,4 @@ with col1:
                  color_continuous_scale=[(0,"blue"),(0.5,"white"), (1,"red")],
                  height=400)
     st.plotly_chart(fig, use_container_width=True)
+
